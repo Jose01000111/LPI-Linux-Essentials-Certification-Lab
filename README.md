@@ -5,7 +5,7 @@ This comprehensive hands-on lab guides you through the LPI Linux Essentials exam
 
 ## Topic 1: The Linux Community and a Career in Open Source
 ## 1.1 Linux Evolution and Popular Operating Systems
-Section Goal: Identify and set up a distribution in your VM to establish the base environment, exploring evolution for context.
+## Section Goal: Identify and set up a distribution in your VM to establish the base environment, exploring evolution for context.
 ## 🔍 Explore Distributions: Open Firefox in your VM (install if needed: sudo apt install firefox -y). Visit distrowatch.com and search for Debian, Ubuntu LTS, CentOS, openSUSE, Red Hat, SUSE, Linux Mint, Scientific Linux. Note: Debian is stable/base for Ubuntu; Red Hat family uses RPM.
 ## 🛠️ Verify and Update Your Distro:
 > Run cat /etc/os-release to confirm Ubuntu/Debian.
