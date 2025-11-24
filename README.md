@@ -9,55 +9,56 @@ This comprehensive hands-on lab guides you through the LPI Linux Essentials exam
 
 ## 1.1 Linux Evolution and Popular Operating Systems
 ## Section Goal: Identify and set up a distribution in your VM to establish the base environment, exploring evolution for context.
-## 🔍 Explore Distributions: 
-> Open Firefox in your VM (install if needed: sudo apt install firefox -y). Visit distrowatch.com and search for Debian, Ubuntu LTS, CentOS, openSUSE, Red Hat, SUSE, Linux Mint, Scientific Linux. Note: Debian is stable/base for Ubuntu; Red Hat family uses RPM.
-## 🛠️ Verify and Update Your Distro:
+### 🔍 Explore Distributions: 
+> Open Firefox in your VM (install if needed: sudo apt install firefox -y). Visit distrowatch.com and >search for Debian, Ubuntu LTS, CentOS, openSUSE, Red Hat, SUSE, Linux Mint, Scientific Linux. Note: >Debian is stable/base for Ubuntu; Red Hat family uses RPM.
+###  🛠️ Verify and Update Your Distro:
 > Run cat /etc/os-release to confirm Ubuntu/Debian.
 > Update packages: sudo apt update && sudo apt upgrade -y.
 > For embedded/cloud awareness: Install qemu for simulation (sudo apt install qemu-system -y) and note > > > Raspberry Pi (Raspbian) for IoT, Android for mobile, AWS EC2 for cloud.
-## 🛠️ Simulate Embedded Setup: 
+### 🛠️ Simulate Embedded Setup: 
 > Create a simple text file: echo "Raspbian for Pi, Android kernel-based" > distros.txt.
-## 📝 Exam Notes: Weight 2. Focus on distro families (Debian vs. Red Hat). LTS = Long Term Support (e.g., Ubuntu 5 years). Embedded: Lightweight for devices; Cloud: Scalable (e.g., 96% of top servers run Linux).
+###  📝 Exam Notes: Weight 2. Focus on distro families (Debian vs. Red Hat). LTS = Long Term Support (e.g., Ubuntu 5 years). Embedded: Lightweight for devices; Cloud: Scalable (e.g., 96% of top servers run Linux).
 
 ---
 
 ## 1.2 Major Open Source Applications
-## Section Goal: Install essential apps to tool your environment for file editing, web serving, and development.
-## 🔍 Research Applications: 
+### Section Goal: Install essential apps to tool your environment for file editing, web serving, and development.
+### 🔍 Research Applications: 
 > In browser, visit libreoffice.org, apache.org. Note uses: LibreOffice for docs, Apache for web servers.
-## 🛠️ Install Desktop/Server Apps:
+### 🛠️ Install Desktop/Server Apps:
 > sudo apt install libreoffice firefox gimp apache2 mariadb-server nextcloud -y.
 > Start Apache: sudo systemctl start apache2 and test: curl localhost.
 > For self-hosted cloud: Note Nextcloud/ownCloud for file sharing (configure later if needed).
-## 🛠️ Install Dev Tools:
+### 🛠️ Install Dev Tools:
 > sudo apt install default-jdk python3 php perl gcc -y.
 > Test: echo 'print("Environment ready!")' > test.py && python3 test.py.
 > Package managers: apt search vim (Debian) or simulate RPM: Note yum for Red Hat.
-## 📝 Exam Notes: Weight 2. Desktop: Thunderbird email, GIMP images. Server: NGINX alternative to Apache, MariaDB/MySQL databases, Samba/NFS sharing. Languages: C compiling, Java/JS web, Python/Perl scripting, PHP web. Tools: dpkg queries installed pkgs, apt/rpm/yum install.
+### 📝 Exam Notes: Weight 2. Desktop: Thunderbird email, GIMP images. Server: NGINX alternative to Apache, MariaDB/MySQL databases, Samba/NFS sharing. Languages: C compiling, Java/JS web, Python/Perl scripting, PHP web. Tools: dpkg queries installed pkgs, apt/rpm/yum install.
 
 ---
 
 ## 1.3 Open Source Software and Licensing
 Section Goal: Apply licensing to your environment's scripts/files for open-source compliance.
-## 🔍 Study Licensing: Browse fsf.org and opensource.org. Read GPL vs. BSD: GPL copyleft (share mods), BSD permissive.
-## 🛠️ License Your Project:
+### 🔍 Study Licensing: Browse fsf.org and opensource.org. Read GPL vs. BSD: GPL copyleft (share mods), BSD permissive.
+### 🛠️ License Your Project:
 > Create project dir: mkdir ~/linux_lab && cd ~/linux_lab.
 > echo "This lab is under GPL v3 - Free Software Foundation" > LICENSE.md.
 > Add Creative Commons note: echo "Docs under CC BY-SA" >> LICENSE.md.
-## 🛠️ Check App Licenses: 
+### 🛠️ Check App Licenses: 
 > apt show apache2 | grep License.
-## 📝 Exam Notes: Weight 1. Philosophy: Open collaboration. FSF/OSI promote free/open. FOSS/FLOSS terms. Models: Red Hat subscriptions. Copyleft enforces openness; permissive allows proprietary.
+### 📝 Exam Notes: Weight 1. Philosophy: Open collaboration. FSF/OSI promote free/open. FOSS/FLOSS terms. Models: Red Hat subscriptions. Copyleft enforces openness; permissive allows proprietary.
 
 ---
 
 ## 1.4 ICT Skills and Working in Linux
-## Section Goal: Configure desktop/CLI basics and privacy for a secure practice environment.
-## 🔍 Browser Privacy: 
+### Section Goal: Configure desktop/CLI basics and privacy for a secure practice environment.
+### 🔍 Browser Privacy: 
 > In Firefox, enable Do Not Track, clear cookies.
-## 🛠️ Web and Content Handling:
+### 🛠️ Web and Content Handling:
 > Search "Linux virtualization uses": Save page as PDF to ~/linux_lab/research.pdf.
 > Open terminal: Ctrl+Alt+T. Run pwd for current dir.
-## 🛠️ Virtualization Setup: Install VirtualBox guest additions if in VM (for shared folders): Follow Ubuntu docs. Note cloud uses: VMs for testing.
+### 🛠️ Virtualization Setup: 
+> Install VirtualBox guest additions if in VM (for shared folders): Follow Ubuntu docs. Note cloud uses: VMs for testing.
 ## 🛠️ Password/Privacy: passwd to change yours. Install privacy tool: sudo apt install ufw -y (firewall).
 ## 📝 Exam Notes: Weight 2. Desktop: Browser config, save content. CLI: Terminal access. Industry: Linux in cloud (AWS), virt (KVM). Privacy: Strong pass, tools like VPN.
 
