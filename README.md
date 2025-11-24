@@ -11,27 +11,27 @@ Section Goal: Identify and set up a distribution in your VM to establish the bas
 > Run cat /etc/os-release to confirm Ubuntu/Debian.
 > Update packages: sudo apt update && sudo apt upgrade -y.
 > For embedded/cloud awareness: Install qemu for simulation (sudo apt install qemu-system -y) and note > > > Raspberry Pi (Raspbian) for IoT, Android for mobile, AWS EC2 for cloud.
-## 🛠️ Simulate Embedded Setup: Create a simple text file: echo "Raspbian for Pi, Android kernel-based" > distros.txt.
-📝 Exam Notes: Weight 2. Focus on distro families (Debian vs. Red Hat). LTS = Long Term Support (e.g., Ubuntu 5 years). Embedded: Lightweight for devices; Cloud: Scalable (e.g., 96% of top servers run Linux).
+## 🛠️ Simulate Embedded Setup: 
+> Create a simple text file: echo "Raspbian for Pi, Android kernel-based" > distros.txt.
+## 📝 Exam Notes: Weight 2. Focus on distro families (Debian vs. Red Hat). LTS = Long Term Support (e.g., Ubuntu 5 years). Embedded: Lightweight for devices; Cloud: Scalable (e.g., 96% of top servers run Linux).
 
 ---
 
-1.2 Major Open Source Applications
-Section Goal: Install essential apps to tool your environment for file editing, web serving, and development.
-🔍 Research Applications: In browser, visit libreoffice.org, apache.org. Note uses: LibreOffice for docs, Apache for web servers.
-🛠️ Install Desktop/Server Apps:
+## 1.2 Major Open Source Applications
+## Section Goal: Install essential apps to tool your environment for file editing, web serving, and development.
+## 🔍 Research Applications: In browser, visit libreoffice.org, apache.org. Note uses: LibreOffice for docs, Apache for web servers.
+## 🛠️ Install Desktop/Server Apps:
+> sudo apt install libreoffice firefox gimp apache2 mariadb-server nextcloud -y.
+> Start Apache: sudo systemctl start apache2 and test: curl localhost.
+> For self-hosted cloud: Note Nextcloud/ownCloud for file sharing (configure later if needed).
+## 🛠️ Install Dev Tools:
+> sudo apt install default-jdk python3 php perl gcc -y.
+> Test: echo 'print("Environment ready!")' > test.py && python3 test.py.
+> Package managers: apt search vim (Debian) or simulate RPM: Note yum for Red Hat.
+## 📝 Exam Notes: Weight 2. Desktop: Thunderbird email, GIMP images. Server: NGINX alternative to Apache, MariaDB/MySQL databases, Samba/NFS sharing. Languages: C compiling, Java/JS web, Python/Perl scripting, PHP web. Tools: dpkg queries installed pkgs, apt/rpm/yum install.
 
-sudo apt install libreoffice firefox gimp apache2 mariadb-server nextcloud -y.
-Start Apache: sudo systemctl start apache2 and test: curl localhost.
-For self-hosted cloud: Note Nextcloud/ownCloud for file sharing (configure later if needed).
+---
 
-🛠️ Install Dev Tools:
-
-sudo apt install default-jdk python3 php perl gcc -y.
-Test: echo 'print("Environment ready!")' > test.py && python3 test.py.
-Package managers: apt search vim (Debian) or simulate RPM: Note yum for Red Hat.
-
-📝 Exam Notes: Weight 2. Desktop: Thunderbird email, GIMP images. Server: NGINX alternative to Apache, MariaDB/MySQL databases, Samba/NFS sharing. Languages: C compiling, Java/JS web, Python/Perl scripting, PHP web. Tools: dpkg queries installed pkgs, apt/rpm/yum install.
 1.3 Open Source Software and Licensing
 Section Goal: Apply licensing to your environment's scripts/files for open-source compliance.
 🔍 Study Licensing: Browse fsf.org and opensource.org. Read GPL vs. BSD: GPL copyleft (share mods), BSD permissive.
