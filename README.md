@@ -9,7 +9,8 @@ This comprehensive hands-on lab guides you through the LPI Linux Essentials exam
 
 ## 1.1 Linux Evolution and Popular Operating Systems
 ## Section Goal: Identify and set up a distribution in your VM to establish the base environment, exploring evolution for context.
-## 🔍 Explore Distributions: Open Firefox in your VM (install if needed: sudo apt install firefox -y). Visit distrowatch.com and search for Debian, Ubuntu LTS, CentOS, openSUSE, Red Hat, SUSE, Linux Mint, Scientific Linux. Note: Debian is stable/base for Ubuntu; Red Hat family uses RPM.
+## 🔍 Explore Distributions: 
+> Open Firefox in your VM (install if needed: sudo apt install firefox -y). Visit distrowatch.com and search for Debian, Ubuntu LTS, CentOS, openSUSE, Red Hat, SUSE, Linux Mint, Scientific Linux. Note: Debian is stable/base for Ubuntu; Red Hat family uses RPM.
 ## 🛠️ Verify and Update Your Distro:
 > Run cat /etc/os-release to confirm Ubuntu/Debian.
 > Update packages: sudo apt update && sudo apt upgrade -y.
@@ -22,7 +23,8 @@ This comprehensive hands-on lab guides you through the LPI Linux Essentials exam
 
 ## 1.2 Major Open Source Applications
 ## Section Goal: Install essential apps to tool your environment for file editing, web serving, and development.
-## 🔍 Research Applications: In browser, visit libreoffice.org, apache.org. Note uses: LibreOffice for docs, Apache for web servers.
+## 🔍 Research Applications: 
+> In browser, visit libreoffice.org, apache.org. Note uses: LibreOffice for docs, Apache for web servers.
 ## 🛠️ Install Desktop/Server Apps:
 > sudo apt install libreoffice firefox gimp apache2 mariadb-server nextcloud -y.
 > Start Apache: sudo systemctl start apache2 and test: curl localhost.
@@ -42,14 +44,16 @@ Section Goal: Apply licensing to your environment's scripts/files for open-sourc
 > Create project dir: mkdir ~/linux_lab && cd ~/linux_lab.
 > echo "This lab is under GPL v3 - Free Software Foundation" > LICENSE.md.
 > Add Creative Commons note: echo "Docs under CC BY-SA" >> LICENSE.md.
-## 🛠️ Check App Licenses: apt show apache2 | grep License.
+## 🛠️ Check App Licenses: 
+> apt show apache2 | grep License.
 ## 📝 Exam Notes: Weight 1. Philosophy: Open collaboration. FSF/OSI promote free/open. FOSS/FLOSS terms. Models: Red Hat subscriptions. Copyleft enforces openness; permissive allows proprietary.
 
 ---
 
 ## 1.4 ICT Skills and Working in Linux
 ## Section Goal: Configure desktop/CLI basics and privacy for a secure practice environment.
-## 🔍 Browser Privacy: In Firefox, enable Do Not Track, clear cookies.
+## 🔍 Browser Privacy: 
+> In Firefox, enable Do Not Track, clear cookies.
 ## 🛠️ Web and Content Handling:
 > Search "Linux virtualization uses": Save page as PDF to ~/linux_lab/research.pdf.
 > Open terminal: Ctrl+Alt+T. Run pwd for current dir.
@@ -116,7 +120,8 @@ Section Goal: Apply licensing to your environment's scripts/files for open-sourc
 ## 🛠️ Tar/Compress:
 > tar -cvf lab.tar config.txt file*.txt.
 > tar -czvf lab.tar.gz $LAB_DIR (gzip). Try tar -cjvf lab.tar.bz2 $LAB_DIR (bzip2), -cJvf xz.
-## 🛠️ Zip: zip lab.zip config.txt && unzip -l lab.zip.
+## 🛠️ Zip: 
+> zip lab.zip config.txt && unzip -l lab.zip.
 ## 📝 Exam Notes: Weight 2. tar c/x create/extract, v verbose, f file. gzip fast, xz compact.
 
 ---
@@ -126,7 +131,9 @@ Section Goal: Apply licensing to your environment's scripts/files for open-sourc
 ## 🛠️ View/Extract:
 > cat config.txt | less. head -3 /etc/passwd, tail -5.
 > ls -l > dir_list.txt && sort dir_list.txt | wc -l.
-## 🛠️ Search: grep 'user' /etc/passwd && cut -d: -f1 /etc/passwd. Regex: grep 'f.le[1-3]' dir_list.txt.
+## 🛠️ Search: 
+> grep 'user' /etc/passwd && cut -d: -f1 /etc/passwd.
+> Regex: grep 'f.le[1-3]' dir_list.txt.
 ## 📝 Exam Notes: Weight 3. Pipes |, redirect > >>. Regex . any, * repeat, [ ] set, ? optional.
 
 ---
@@ -142,7 +149,8 @@ Section Goal: Apply licensing to your environment's scripts/files for open-sourc
 > tar -czvf backup.tar.gz $DIR
 > if [ $? -eq 0 ]; then echo "Success"; else echo "Fail"; fi
 > exit 0
-## 🛠️ Run: chmod +x backup.sh && ./backup.sh $LAB_DIR.
+## 🛠️ Run: 
+> chmod +x backup.sh && ./backup.sh $LAB_DIR.
 ## 📝 Exam Notes: Weight 4. Shebang interpreter. Vars $1 args. Loops repeat. $? status. Editors nano/vi.
 
 ---
@@ -153,7 +161,9 @@ Section Goal: Apply licensing to your environment's scripts/files for open-sourc
 
 ## 4.1 Choosing an Operating System
 ## Section Goal: Compare to justify Ubuntu for environment.
-> 🔍 Compare: Note Linux CLI vs. Windows GUI. Distro lifecycle: Ubuntu LTS stable.
+> 🔍 Compare:
+> Note Linux CLI vs. Windows GUI.
+> Distro lifecycle: Ubuntu LTS stable.
 > 🛠️ Config: lsb_release -a. Upgrade: sudo do-release-upgrade (simulate).
 ## 📝 Exam Notes: Weight 1. Linux open/free. Cycles: Beta test, stable prod.
 
@@ -161,24 +171,32 @@ Section Goal: Apply licensing to your environment's scripts/files for open-sourc
 
 ## 4.2 Understanding Computer Hardware
 ## Section Goal: Check VM hardware for environment compatibility.
-> 🛠️ Inspect: lscpu CPU, lsblk drives (/dev/sda), free -h RAM. lspci devices.
-> 🛠️ Drivers: lsmod | grep vbox (if VirtualBox).
+## 🛠️ Inspect: 
+> lscpu CPU, lsblk drives (/dev/sda), free -h RAM. lspci devices.
+## 🛠️ Drivers: 
+> lsmod | grep vbox (if VirtualBox).
 ## 📝 Exam Notes: Weight 2. Components: Motherboard/CPU/power. Drives: SSD/HDD, partitions. Drivers load modules.
 
 ---
 
 ## 4.3 Where Data is Stored
 ## Section Goal: Monitor environment processes/logs.
-> 🛠️ Processes: ps aux | grep bash, top -n1, free -h.
-> 🛠️ System: dmesg | tail, cat /proc/meminfo. Logs: ls /var/log/, configs /etc/.
+## 🛠️ Processes:
+>  ps aux | grep bash, top -n1, free -h.
+## 🛠️ System:
+>  dmesg | tail, cat /proc/meminfo.
+> Logs: ls /var/log/, configs /etc/.
 ## 📝 Exam Notes: Weight 3. /proc virtual, /dev devices, /sys kernel, /boot bootfiles, /var/log logs.
 
 ---
 
 ## 4.4 Your Computer on the Network
 ## Section Goal: Configure network for environment sharing.
-> 🛠️ Query: ip addr show, ip route, ss -tuln.
-> 🛠️ Test: ping 8.8.8.8, host ubuntu.com. Check /etc/resolv.conf, /etc/hosts.
+## 🛠️ Query:
+> ip addr show, ip route, ss -tuln.
+## 🛠️ Test:
+> ping 8.8.8.8, host ubuntu.com.
+> Check /etc/resolv.conf, /etc/hosts.
 ## 📝 Exam Notes: Weight 2. IPv4/6, routers LAN-WAN. netstat/ss connections.
 
 ---
@@ -189,16 +207,23 @@ Section Goal: Apply licensing to your environment's scripts/files for open-sourc
 
 ## 5.1 Basic Security and Identifying User Types
 ## Section Goal: Identify users in environment.
-> 🛠️ Check: id, who, w, last. cat /etc/passwd (users), /shadow (pass), /group.
-> 🛠️ Switch: sudo su - (root), exit.
+> 🛠️ Check: id, who, w, last.
+>  cat /etc/passwd (users),
+> /shadow (pass),
+> /group.
+> 🛠️ Switch: sudo su - (root),
+>  exit.
 ## 📝 Exam Notes: Weight 2. Root UID0, standard 1000+, system <1000.
 
 ---
 
 ## 5.2 Creating Users and Groups
 ## Section Goal: Add users for environment access control.
-> 🛠️ Create: sudo groupadd labgroup && sudo useradd -m -g labgroup labuser.
-> 🛠️ Pass: sudo passwd labuser. Check /etc/skel/ template.
+## 🛠️ Create: 
+> sudo groupadd labgroup && sudo useradd -m -g labgroup labuser.
+## 🛠️ Pass: 
+> sudo passwd labuser.
+> Check /etc/skel/ template.
 ## 📝 Exam Notes: Weight 2. useradd/groupadd. UIDs unique.
 
 ---
@@ -206,7 +231,8 @@ Section Goal: Apply licensing to your environment's scripts/files for open-sourc
 ## 5.3 Managing File Permissions and Ownership
 ## Section Goal: Secure environment files.
 > 🛠️ View: ls -la $LAB_DIR.
-> 🛠️ Change: chmod 755 backup.sh, chown -R labuser:labgroup $LAB_DIR.
+> 🛠️ Change: chmod 755 backup.sh,
+> chown -R labuser:labgroup $LAB_DIR.
 ## 📝 Exam Notes: Weight 2. Perms r=4 w=2 x=1, u/g/o. chown owner:group.
 
 ---
@@ -214,5 +240,6 @@ Section Goal: Apply licensing to your environment's scripts/files for open-sourc
 ## 5.4 Special Directories and Files
 ## Section Goal: Use specials for temp/links in environment.
 > 🛠️ Temp: touch /tmp/lab_temp && ls -ld /tmp (sticky t).
-> 🛠️ Links: ln -s $LAB_DIR/backup.sh ~/backup_link. rm /tmp/lab_temp.
+> 🛠️ Links: ln -s $LAB_DIR/backup.sh ~/backup_link.
+> rm /tmp/lab_temp.
 ## 📝 Exam Notes: Weight 1. /tmp volatile, sticky protects files. ln -s soft links.
